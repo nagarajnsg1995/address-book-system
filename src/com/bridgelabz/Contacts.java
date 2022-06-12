@@ -1,7 +1,5 @@
 package com.bridgelabz;
-
-public class contacts {
-    public class Contacts {
+public class Contacts {
         private String firstName;
         private String lastName;
         private String address;
@@ -93,4 +91,4 @@ public class contacts {
                     '}';
         }
     }
-}
+

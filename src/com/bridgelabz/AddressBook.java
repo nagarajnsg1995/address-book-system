@@ -102,9 +102,9 @@ public class AddressBook {
         System.out.println(Book);
     }
 
-    /*
-     * Purpose : Used deleteDetails method to delete the details of the person
-     */
+
+     // delete the details
+
     public void deleteDetails() {
 
         System.out.println("Confirm your first name to edit details: ");

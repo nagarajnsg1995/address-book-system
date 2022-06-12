@@ -11,7 +11,7 @@ public class AddressBook {
     static HashMap<String, ArrayList<Contacts>> hashmap = new HashMap<>();
     static AddressBook Details = new AddressBook();
 
-       // add details
+
     public void addDetails() {
 
         Scanner scanner = new Scanner(System.in);
@@ -26,19 +26,19 @@ public class AddressBook {
         details.setCity(scanner.nextLine());
         System.out.println("Enter the State ");
         details.setState(scanner.nextLine());
-        System.out.println("Enter the Email of person");
+        System.out.println("Enter the Email ");
         details.setEmail(scanner.nextLine());
-        System.out.println("Enter the Zip code of person");
+        System.out.println("Enter the Zip code ");
         details.setZipCode(scanner.nextInt());
-        System.out.println("Enter the mobile number");
+        System.out.println("Enter the Phone number");
         details.setPhoneNumber(scanner.nextInt());
 
         Book.add(details);
-
-        System.out.println(Book);
+        viewAllBooks();
     }
 
-    // edit the details
+
+      // edit the details
 
     public void editDetails() {
 
@@ -95,7 +95,7 @@ public class AddressBook {
 
     }
 
-     // display the details
+      // display the details
 
     public void output() {
 
@@ -103,7 +103,7 @@ public class AddressBook {
     }
 
 
-     // delete the details
+     // delete details
 
     public void deleteDetails() {
 
@@ -171,7 +171,7 @@ public class AddressBook {
                                 break;
                         }
                         hashmap.put(address_name, Book);
-                        System.out.println(hashmap);
+                        viewMap();
                     }
                     break;
 
@@ -195,7 +195,8 @@ public class AddressBook {
                             }
                             switch (choose2) {
                                 case 1:
-                                    Details.addDetails();addDetails();
+                                    Details.addDetails();
+                                    addDetails();
                                     break;
                                 case 2:
                                     Details.editDetails();
@@ -208,8 +209,8 @@ public class AddressBook {
                                     break;
                             }
                             hashmap.put(address_name_old, Book);
-                            System.out.println(hashmap);
-                            System.out.println( );
+                            viewMap();
+
                         }
                     } else {
                         System.out.println("Enter valid address book name");
@@ -217,7 +218,7 @@ public class AddressBook {
                     break;
 
                 case 3:
-                    System.out.println(hashmap);
+                    viewMap();
                     break;
 
                 default:
@@ -225,6 +226,15 @@ public class AddressBook {
 
             }
         }
+    }
+    public void viewAllBooks () {
+        for (Contacts book : Book) {
+            System.out.println(book);
+        }
+    }
+    public void viewMap(){
+        for (String name: hashmap.keySet()) { String key = name;
+            String value = hashmap.get(name).toString(); System.out.println(key + " " + value); }
     }
 
     public static void main(String[] args) {
